@@ -48,7 +48,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        return $user->update($request->all());
+        return $user->update($request->all()) ? "atualizado com sucesso" : "erro na atualização";
     }
 
     /**
@@ -59,6 +59,6 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        return $user->delete();
+        return $user->delete() ? "removido com sucesso" : "erro na remoção";
     }
 }
